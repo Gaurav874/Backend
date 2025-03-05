@@ -25,6 +25,7 @@ app.get('/',(req,res) => { //4th
     
 // })
 
+//get
 app.get('/api/:name/:rollno',(req,res) => {
     try{
         const { name, rollno} = req.params;
@@ -33,6 +34,25 @@ app.get('/api/:name/:rollno',(req,res) => {
         console.log(`error is : ${error.message}`)
     }
 });
+
+
+
+
+
+// post
+app.use(express.json());
+app.post('/users',(req,res) => {
+    const {name} = req.body;
+    res.send(`my name is ${name}`)
+});
+
+
+
+
+
+
+
+
 
 
 app.listen(port,() =>{    //3 for port
